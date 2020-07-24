@@ -3,6 +3,7 @@ import classes from './Person.css';
 import Auxiliary from '../../hoc/auxiliary';
 import withClass from '../../hoc/withClass';
 import PropTypes from 'prop-types';
+import AuthContext from '../../../context/auth-context';
 
 class Person extends Component {
 
@@ -13,6 +14,9 @@ class Person extends Component {
     //      super(props);
     //      this.inputElRef= React.createRef();
     // }
+
+
+    
 
 
  //------First way of using Ref   
@@ -27,7 +31,15 @@ render()
     console.log('[Person.js] rendering....');
     return (
         <Auxiliary>
-            {this.props.isAuth ? <p>Authenticated</p> : <p>Please Login</p>}
+            {/* <AuthContext.Consumer>
+                {context =>
+               context.authenticated ? <p>Authenticated</p> : <p>Please Login</p>
+                 }
+            </AuthContext.Consumer> */}
+           
+{this.props.isAuth  ? <p>Authenticated</p> : <p>Please Login</p>}
+
+
          {/* <div className={classes.Person}> */}
             <p  onClick={this.props.click}>I'm {this.props.name} and I am {this.props.age} years old!</p>
             <p >{this.props.children}</p>

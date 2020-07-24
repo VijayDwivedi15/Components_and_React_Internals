@@ -7,6 +7,9 @@ import Cockpit from '../Components/Cockpit/Cockpit';
 import withClass from '../Components/hoc/withClass';
 import auxiliary from '../Components/hoc/auxiliary';
 
+import AuthContext from '../context/auth-context';
+
+
 
 
 class App extends Component {
@@ -128,6 +131,11 @@ isAuthenticated= {this.state.authenticated}
 <button onClick={()=>{this.setState({showCockpit:false});
 }}>Remove Cockpit</button>
 
+{/* <AuthContext.Provider 
+value = {{
+  authenticated : this.state.authenticated, 
+  login : this.loginHandler}} > */}
+
 {this.state.showCockpit ? 
 
 
@@ -139,6 +147,7 @@ isAuthenticated= {this.state.authenticated}
         login={this.loginHandler}
         />: null }
         {persons}
+        {/* </AuthContext.Provider> */}
       </auxiliary>
     );
     // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work now?'));
