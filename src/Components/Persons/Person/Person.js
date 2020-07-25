@@ -16,7 +16,7 @@ class Person extends Component {
     // }
 
 
-    
+
 
 
  //------First way of using Ref   
